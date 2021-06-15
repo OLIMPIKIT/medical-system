@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Добро пожаловать{% endblock %}
+
+{% block content %}
+    <div class="col-xl-6 col-lg-6">
+	<h1>Добро пожаловать</h1> <br>
+    <p><p>Добро пожаловать на наш сайт. Вы можете <a href="{% url "edit" %}">изменить данные своего профиля</a> или <a href="{% url "password_change" %}">изменить свой пароль</a>.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+  
+  {% block content %}
+
+      <div class="col-xl-12">
+				<h1>Запись на прием к врачу</h1>
+				<h5>Выберите ФИО врача, к которому хотите записаться:</h5>
+
+      </div>
+
+      <div class="row marketing">
+			{% for doctor in doctors %}
+		  <div class="col-lg-12">
+            <h4>{{doctor.name|safe}}</h4>
+		    			       <p> <a class="btn btn-inverse"
+                       href="{% url 'reception' specialization=doctor.specialization.id doctor=doctor.id %}">Выбрать этого врача</a>
+                  </p>
+          </div>
+         {% endfor %}
+      </div>
+	 
+  {% endblock content %}
+
+  {% block css %} 
+    <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.theme.css' %}">
+  {% endblock %}

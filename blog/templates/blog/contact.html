@@ -1,0 +1,89 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <section class="contact-section">
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+                          
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Написать обращение Нам:</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        
+						<form action="/contact/" method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+	<div>
+	  <label for="id_subject">Тема:</label>
+	  {{ form.subject.errors }}
+	  {{ form.subject }}
+	</div>
+	<div>
+	  <label for="id_sender">E-mail:</label>
+	  {{ form.sender.errors }}
+	  {{ form.sender }}
+	</div>
+	<div>
+	  <label for="id_message">Сообщение:</label>
+	  {{ form.message.errors }}
+	  {{ form.message }}
+	</div>
+	<div>
+	  {{ form.copy.errors }}
+	  <label for="id_copy">Отправить копию себе {{ form.copy }}</label>
+	</div>
+	<input type="submit" value="Отправить"/>
+</form>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>г. Ачинск</h3>
+                                <p>5 м-он, д.51</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3>+73915120304</h3>
+                                <p>ПН-ПТ с 7-30 до 16-00</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3>amrb@google.com</h3>
+                                <p>Наш e-mail</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<form action="/contact/" method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+	<div>
+	  <label for="id_subject">Тема:</label>
+	  {{ form.subject.errors }}
+	  {{ form.subject }}
+	</div>
+	<div>
+	  <label for="id_sender">E-mail:</label>
+	  {{ form.sender.errors }}
+	  {{ form.sender }}
+	</div>
+	<div>
+	  <label for="id_message">Сообщение:</label>
+	  {{ form.message.errors }}
+	  {{ form.message }}
+	</div>
+	<div>
+	  {{ form.copy.errors }}
+	  <label for="id_copy">Отправить копию себе {{ form.copy }}</label>
+	</div>
+	<input type="submit" value="Отправить"/>
+</form>
+
+{% endblock %}

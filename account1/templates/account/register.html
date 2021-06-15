@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Создайте свой аккаунт{% endblock %}
+
+{% block content %}
+    <div class="col-xl-12">
+		<h1>Создайте свой аккаунт</h1> 
+		<p>Пожалуйста, заполните форму ниже, чтобы создать аккаунт:</p>
+	</div>
+    <form action="." method="post">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Создать аккаунт"></p>
+    </form>
+{% endblock %}
