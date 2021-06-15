@@ -80,10 +80,9 @@
   {% endblock content %}
 
   {% block js %} 
-    <script src="{% static 'jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'jquery-ui/jquery-ui.js' %}" ></script>
 
     <script type = "text/javascript">
-	
 	$("#id_date").datepicker({dateFormat: 'yy-mm-dd'});
 
     $(document).ready(function() {
